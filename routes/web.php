@@ -38,25 +38,12 @@ Route::get('/pasandoDatos', function () {
 
 //Route::get('/peliculas2','PeliculasController@listarPeliculas');
 
-Route::get('/peliculas', function () {
-    $peliculas = [
-      "Toy Story",
-      "Avengers - Age of Ultron",
-      "Avengers - End Game",
-      "The mule",
-      "How to train your Dragon."
-    ];
+Route::get('/peliculas', 'MovieController@list');
 
-    // return view('welcome', ['hola' => $saludo]);
-    //$vac = compact('saludo');
-      //return view('welcome', compact('saludo'));
-      return view('peliculas')->with('peliculas', $peliculas);
-});
-
-Route::get('/actors', function(){
-  return view('actors');
-});
-
+// Route::get('/actors', function(){
+//   return view('actors');
+// });
+Route::get('/actors', 'ActorController@index');
 
 
 

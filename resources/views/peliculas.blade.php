@@ -15,8 +15,9 @@
         //$peliculas = [];
       @endphp
       @forelse ($peliculas as $pelicula)
-          @unless ($pelicula == "The mule")
-            <li>{{$pelicula}}</li>
+          @unless ($pelicula->title == "The mule")
+            <li>{{$pelicula->title}}</li>
+            <li>{{$pelicula->rating}}</li>
           @endunless
 
       @empty
@@ -29,7 +30,7 @@
     <ul>
       <h3>Sintaxis Php</h3>
     <? foreach($peliculas as $pelicula): ?>
-      <li><?= $pelicula ?></li>
+      <li><?= $pelicula->title ?></li>
     <? endforeach ?>
     </ul>
 

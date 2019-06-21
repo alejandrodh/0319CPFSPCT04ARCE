@@ -7,7 +7,11 @@
 
 @section('contenido')
 <h1>Lista de actores</h1>
-
+<ul>
+@foreach ($actores as $actor)
+  <li>{{$actor->getNombreCompleto()}}</li>
+@endforeach
+</ul>
 @endsection
 
 @section('links')
