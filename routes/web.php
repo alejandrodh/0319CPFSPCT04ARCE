@@ -36,6 +36,8 @@ Route::get('/pasandoDatos', function () {
       return view('welcome')->with('hola', $saludo);
 });
 
+//Route::get('/peliculas2','PeliculasController@listarPeliculas');
+
 Route::get('/peliculas', function () {
     $peliculas = [
       "Toy Story",
