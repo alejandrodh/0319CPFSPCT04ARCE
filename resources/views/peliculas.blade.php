@@ -16,8 +16,11 @@
       @endphp
       @forelse ($peliculas as $pelicula)
           @unless ($pelicula->title == "The mule")
-            <li>{{$pelicula->title}}</li>
+            <a href="/pelicula/{{$pelicula->id}}">
+              <li>{{$pelicula->title}}</li>
+            </a>
             <li>{{$pelicula->rating}}</li>
+            
           @endunless
 
       @empty

@@ -45,9 +45,19 @@ Route::get('/peliculas', 'MovieController@list');
 // });
 Route::get('/actors', 'ActorController@index');
 
+Route::get('/actores','ActorController@directory');
 
+Route::get('/actor/{id}','ActorController@show');
 
+Route::get('/actores/buscar','ActorController@search');
 
+Route::get('/agregarPelicula', function(){
+  return view('agregarPelicula');
+});
+Route::post('/agregarPelicula', 'MovieController@create');
 
+Route::get('/borrarPelicula','MovieController@delete');
+
+Route::get('/pelicula/{id}','MovieController@showMovie');
 
 //

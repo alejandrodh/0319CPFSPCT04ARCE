@@ -12,11 +12,27 @@ class ActorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      $actores = Actor::all();
-      return view('actors', compact('actores'));
 
+     public function search(Request $req){
+
+       $actors = Actor::where('first_name','like',$req["name"])
+        ->orderBy('last_name')
+        ->get();
+
+       return view('actors',compact('actors'));
+     }
+
+
+
+    public function index(){
+      $actors = Actor::all();
+      return view('actors', compact('actors'));
+
+    }
+
+    public function directory(){
+      $actors = Actor::all();
+      return view('actors',compact('actors'));
     }
 
 
@@ -47,9 +63,11 @@ class ActorController extends Controller
      * @param  \App\Actor  $actor
      * @return \Illuminate\Http\Response
      */
-    public function show(Actor $actor)
+    public function show($id)
     {
-        //
+        $actor = Actor::find($id);
+
+        return view('actor',compact('actor'));
     }
 
     /**
@@ -85,4 +103,6 @@ class ActorController extends Controller
     {
         //
     }
+
+
 }
