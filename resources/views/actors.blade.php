@@ -7,7 +7,7 @@
 
 @section('contenido')
 
-<form class="" action="/actores/buscar" method="get">
+<form class="" action="/actors/search" method="get">
   <input type="text" name="name" value="">
   <input type="submit" name="" value="Buscar Actor">
 </form>
@@ -17,6 +17,7 @@
 @foreach ($actors as $actor)
   <li>
     <a href="/actor/{{$actor->id}}">
+    {{-- {{$actor->first_name}}, {{$actor->last_name}} --}}
     {{$actor->getNombreCompleto()}}
     </a>
   </li>

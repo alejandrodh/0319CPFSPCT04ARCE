@@ -38,26 +38,19 @@ Route::get('/pasandoDatos', function () {
 
 //Route::get('/peliculas2','PeliculasController@listarPeliculas');
 
-Route::get('/peliculas', 'MovieController@list');
+Route::get('/movies', 'MovieController@list');
 
 // Route::get('/actors', function(){
 //   return view('actors');
 // });
 Route::get('/actors', 'ActorController@index');
-
-Route::get('/actores','ActorController@directory');
-
 Route::get('/actor/{id}','ActorController@show');
+Route::get('/actors/search','ActorController@search');
+Route::get('/addMovie', 'MovieController@create');
+Route::post('/addMovie', 'MovieController@store');
+Route::get('/deleteMovie/{id}','MovieController@destroy');
+Route::get('/genres','GenreController@index');
 
-Route::get('/actores/buscar','ActorController@search');
-
-Route::get('/agregarPelicula', function(){
-  return view('agregarPelicula');
-});
-Route::post('/agregarPelicula', 'MovieController@create');
-
-Route::get('/borrarPelicula','MovieController@delete');
-
-Route::get('/pelicula/{id}','MovieController@showMovie');
+Route::get('/movie/{id}','MovieController@show');
 
 //

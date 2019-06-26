@@ -87,7 +87,7 @@
                 Laravel
             </div>
 
-            @yield('contenido');
+            @yield('contenido')
 
             <div class="links">
               @section('links')

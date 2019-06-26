@@ -6,7 +6,8 @@
 
 
 @section('contenido')
-<h1>Actor seleccionado</h1>
+<h1>Datos del actor: {{$actor
+  ->getNombreCompleto()}}</h1>
 
 @if ($actor)
 
