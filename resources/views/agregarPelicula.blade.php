@@ -14,7 +14,7 @@
       @endforeach
       </ul>
 
-      <form class="" action="/agregarPelicula" method="post" enctype="multipart/form-data">
+      <form class="" action="/addMovie" method="post" enctype="multipart/form-data">
          @csrf {{-- ES OBLIGATORIO PARA FORMS METHOD POST --}}
         {{-- {{csrf_field()}} --}}
         <div class="">
